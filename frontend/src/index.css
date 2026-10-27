@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #172033; background: #f6f8fc; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #dbeafe; }
+
+@layer components {
+  .font-display { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .nav-item { @apply flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-semibold text-slate-500 transition hover:bg-slate-50 hover:text-slate-900; }
+  .nav-active { @apply bg-blue-50 text-blue-700 hover:bg-blue-50 hover:text-blue-700; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-bold text-white shadow-md shadow-blue-200/70 transition hover:bg-blue-700 active:scale-[.98]; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50; }
+  .stat-card { @apply flex items-center rounded-2xl border border-slate-200/80 bg-white p-4 shadow-soft sm:p-5; }
+  .search-input { @apply h-12 rounded-xl border border-slate-200 bg-white text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100; }
+  .location-row { @apply transition hover:bg-slate-50/70; }
+  .action-primary { @apply inline-flex items-center gap-1.5 rounded-lg bg-blue-50 px-3 py-2 text-xs font-bold text-blue-700 transition hover:bg-blue-600 hover:text-white; }
+  .action-secondary { @apply inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 transition hover:border-slate-300 hover:bg-slate-50; }
+  .icon-action { @apply inline-grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-700; }
+  .recent-card { @apply rounded-2xl border border-slate-200/80 bg-white p-4 shadow-soft transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md; }
+  .form-label { @apply mb-1.5 block text-xs font-bold text-slate-700; }
+  .form-input { @apply w-full rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-100; }
+}
+.hero-orb { position: absolute; border-radius: 9999px; pointer-events: none; filter: blur(1px); }
+.orb-one { width: 360px; height: 360px; right: -90px; top: -190px; background: radial-gradient(circle, rgba(59,130,246,.28), rgba(59,130,246,0)); }
+.orb-two { width: 320px; height: 320px; right: 100px; bottom: -260px; background: radial-gradient(circle, rgba(99,102,241,.28), rgba(99,102,241,0)); }
+.hero-map { position: absolute; right: 1%; top: 0; width: 43%; height: 100%; opacity: .7; }
+.map-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(148,163,184,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.12) 1px, transparent 1px); background-size: 34px 34px; transform: perspective(450px) rotateX(48deg) rotateZ(-15deg) scale(1.35); mask-image: linear-gradient(to left, black, transparent); }
+.map-pin { position: absolute; z-index: 2; color: #93c5fd; filter: drop-shadow(0 4px 12px rgba(59,130,246,.5)); }
+.pin-a { top: 32%; left: 46%; color: #fff; }
+.pin-b { top: 56%; left: 67%; color: #60a5fa; }
+.pin-c { top: 22%; left: 76%; color: #a5b4fc; }
+.map-route { position: absolute; left: 48%; top: 37%; width: 25%; height: 30%; border-top: 2px dashed rgba(147,197,253,.8); border-right: 2px dashed rgba(147,197,253,.8); border-radius: 0 25px 0 0; transform: rotate(15deg); }
